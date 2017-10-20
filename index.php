@@ -13,14 +13,12 @@ function autoPull() {
 }
 
 
- if($_POST['Payload']) {
- 	$payload  = $_POST['Payload'];
- 	if($payload['ref'] ==  "refs/heads/GITHUB-WEBHOOK") {
- 		 autoPull();
-
- 	} else {
- 		return json_encode("Not on branch allowed for autopull");
- 	}
- }
-    
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    echo "Hello! Payload received";
+    $data = json_decode(file_get_contents('php://input'), true);
+	
+	if($data['ref'] == 'refs/heads/GITHUB-WEBHOOK') {
+		autoPull();
+	}
+}
 ?>
