@@ -14,7 +14,6 @@ function autoPull() {
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    echo "Hello! Payload received";
     $data = json_decode(file_get_contents('php://input'), true);
 	
 	if($data['ref'] == 'refs/heads/GITHUB-WEBHOOK') {
@@ -22,7 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	}
     else {
         $message = "You are not on the right branch to autdeploy";
-        return json_encode(array('nopull' => arary('message' => $message)));
+        $response = json_encode(array('nopull' => arary('message' => $message)));
+        echo $response;
     }
 }
 ?>
