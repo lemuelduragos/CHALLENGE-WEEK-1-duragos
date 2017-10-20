@@ -14,8 +14,8 @@ function autoPull() {
 
 autoPull();
 
-if($_POST['Payload']) {
+if (!empty($_POST)) {
 	return json_encode("Hello! Payload received");
 }
-    
+
 ?>
