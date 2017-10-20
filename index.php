@@ -16,6 +16,6 @@ autoPull();
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    return json_encode("Hello! Payload received");
+    echo "Hello! Payload received";
 }
 ?>
