@@ -20,9 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		autoPull();
 	}
     else {
-        $message = "You are not on the right branch to autdeploy";
-        $response = json_encode(array('nopull' => arary('message' => $message)));
-        echo $response;
+       echo "You are not on the right branch to autdeploy";
     }
 }
 ?>
