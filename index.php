@@ -20,5 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if($data['ref'] == 'refs/heads/GITHUB-WEBHOOK') {
 		autoPull();
 	}
+    else {
+        $message = "You are not on the right branch to autdeploy";
+        return json_encode(array('nopull' => arary('message' => $message)));
+    }
 }
 ?>
