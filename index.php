@@ -12,7 +12,7 @@ function autoPull() {
     }
 
 
-    //comment
+ autoPull();
 
 }
     
