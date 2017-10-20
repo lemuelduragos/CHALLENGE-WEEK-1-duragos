@@ -10,10 +10,9 @@ function autoPull() {
     foreach($commands AS $command){
         shell_exec("$command 2>&1");
     }
+}
 
 
  autoPull();
-
-}
     
 ?>
