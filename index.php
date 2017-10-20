@@ -11,8 +11,6 @@ function autoPull() {
         shell_exec("$command 2>&1");
     }
 
-
-    if
 }
     
 ?>
